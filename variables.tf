@@ -22,5 +22,5 @@ variable "db-privateip" {}
 
 ##monitoring
 variable "mon-ami" {}
-variable "instance-mon" {}
+variable "mon-instance" {}
 variable "mon-privateip" {}
