@@ -31,6 +31,7 @@ module "database" {
   instance-db = var.db-instance
   subnet-db = module.network.private_subnet_id
   sg-db  = module.alb.private-sg-id
+  privateip-db = var.db-privateip
   
 }
   
