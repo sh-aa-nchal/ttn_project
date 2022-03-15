@@ -1,43 +1,44 @@
 module "network" {
   source = "./modules/network"
-  main_vpc_cidr =
-  public_subnet1 =
-  public_subnet2 = 
+  main_vpc_cidr = var.vpc_cdr
+  public_subnet1 =  var.public1_cdr
+  public_subnet2 = var.public2_cdr
+  private_subnets = var.private_cdr
 }
   
 module "alb" {
   source  = "./modules/alb"
-  subnet1 =
-  subnet2 =
+  subnet1 = module.network.public_subnet1.id
+  subnet2 = module.publicsubnet2.id
 }
   
 module "asg" {
   source = "./modules/asg"
-  ami_id =
-  instance_type = 
-  desired_cap =
-  max_count =
-  min_count =
-  subnet1_id =
-  subnet2_id =
-  min_healthy =
+  ami_id = var.ami-ins
+  instance_type = var.ins-type
+  desired_cap = var.desired-cap
+  max_count = var.max-count
+  min_count = var.min-count
+  subnet1_id = module.network.public_subnet1_id
+  subnet2_id = module.network.public_subnet2_id
+  min_healthy = var.min-healthy
   
 }
   
 module "database" {
   source = "./modules/database"
-  ami-db =
-  instance-db = 
-  subnet-db =
-  sg-db  =
+  ami-db = var.db-ami
+  instance-db = var.db-instance
+  subnet-db = module.network.private_subnet_id
+  sg-db  = module.alb.
   
 }
   
 module "monitoring" {
   source = "./modules/monitoring"
-  ami-mon = 
-  instance-mon = 
-  subnet-mon =
-  sg-mon  = 
+  ami-mon = var.mon-ami
+  instance-mon = var.instance-mon
+  subnet-mon = module.network.private_subnet_id
+  sg-mon  = module.alb.
 }
   
