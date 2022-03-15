@@ -27,7 +27,7 @@ module "asg" {
 module "database" {
   source = "./modules/database"
   ami-db =
-  instance-dbdb = 
+  instance-db = 
   subnet-db =
   sg-db  =
   
