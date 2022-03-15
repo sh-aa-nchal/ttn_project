@@ -30,7 +30,7 @@ module "database" {
   ami-db = var.db-ami
   instance-db = var.db-instance
   subnet-db = module.network.private_subnet_id
-  sg-db  = module.alb.
+  sg-db  = module.alb.private-sg-id
   
 }
   
@@ -39,6 +39,6 @@ module "monitoring" {
   ami-mon = var.mon-ami
   instance-mon = var.instance-mon
   subnet-mon = module.network.private_subnet_id
-  sg-mon  = module.alb.
+  sg-mon  = module.alb.private-sg-id
 }
   
