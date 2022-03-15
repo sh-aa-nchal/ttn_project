@@ -26,10 +26,18 @@ module "asg" {
   
 module "database" {
   source = "./modules/database"
+  ami-db =
+  instance-dbdb = 
+  subnet-db =
+  sg-db  =
   
 }
   
 module "monitoring" {
   source = "./modules/monitoring"
+  ami-mon = 
+  instance-mon = 
+  subnet-mon =
+  sg-mon  = 
 }
   
