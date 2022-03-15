@@ -6,10 +6,16 @@ locals {
 }
 }
 
-
-
+data "aws_key_pair" "project-key" {
+  filter {
+    name = "tag:purpose"
+    values = ["project"]
+  }
+  
+  
 resource "aws_launch_template" "app-temp" {
   name_prefix = "ttn-"
+  key_name  = data.aws_key_pair.project-key.key_name
   image_id    = var.ami_id
   instance_type = var.instance_type
   user_data     = base64encode(templatefile("${path.module}/tomcat.sh", local.vars))
