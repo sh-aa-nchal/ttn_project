@@ -7,7 +7,8 @@ module "network" {
   
 module "alb" {
   source  = "./modules/alb"
-  
+  subnet1 =
+  subnet2 =
 }
   
 module "asg" {
