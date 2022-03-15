@@ -40,5 +40,6 @@ module "monitoring" {
   instance-mon = var.mon-instance
   subnet-mon = module.network.private_subnet_id
   sg-mon  = module.alb.private-sg-id
+  privateip-mon = var.mon-privateip
 }
   
