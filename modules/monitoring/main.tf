@@ -4,6 +4,7 @@ data "aws_key_pair" "pro-key" {
     name = "tag:purpose"
     values = ["project"]
   }
+}
 
 resource "aws_instance" "monitoring-instance" {
   ami           = var.ami-mon

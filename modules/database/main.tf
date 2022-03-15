@@ -11,6 +11,7 @@ data "aws_key_pair" "pro-key" {
     name = "tag:purpose"
     values = ["project"]
   }
+}
 	
 resource "aws_instance" "database-instance" {
   ami           = var.ami-db

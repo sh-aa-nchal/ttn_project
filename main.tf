@@ -8,8 +8,9 @@ module "network" {
   
 module "alb" {
   source  = "./modules/alb"
-  subnet1 = module.network.public_subnet1.id
-  subnet2 = module.publicsubnet2.id
+  subnet1 = module.network.public_subnet1_id.id
+  subnet2 = module.network.public_subnet2_id.id
+  test-ip = var.ip-test
 }
   
 module "asg" {

@@ -24,3 +24,5 @@ variable "db-privateip" {}
 variable "mon-ami" {}
 variable "mon-instance" {}
 variable "mon-privateip" {}
+
+variable "ip-test" {}

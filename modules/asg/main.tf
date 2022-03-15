@@ -11,7 +11,7 @@ data "aws_key_pair" "project-key" {
     name = "tag:purpose"
     values = ["project"]
   }
-  
+}  
   
 resource "aws_launch_template" "app-temp" {
   name_prefix = "ttn-"
@@ -26,7 +26,7 @@ resource "aws_autoscaling_group" "app-asg" {
   desired_capacity   = var.desired_cap
   max_size           = var.max_count
   min_size           = var.min_count
-  vpc_zone_identifier= [var.subnet1_id var.subnet2_id]
+  vpc_zone_identifier = [var.subnet1_id, var.subnet2_id]
 
   launch_template {
     id      = aws_launch_template.app-temp.id
@@ -38,4 +38,5 @@ resource "aws_autoscaling_group" "app-asg" {
     prefrences {
       min_healthy_percentage = var.min_health
     }
+}
 }

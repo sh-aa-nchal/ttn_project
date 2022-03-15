@@ -15,7 +15,7 @@ resource "aws_lb" "test" {
 
 resource "aws_security_group" "public-sg" {
     name   = "public-sg"
-    vpc_id = aws_vpc.Main.id
+    vpc_id = var.vpc-id
     ingress {
         from_port   = 80
         to_port     = 80
@@ -32,7 +32,7 @@ resource "aws_security_group" "public-sg" {
         from_port   = 0
         to_port     = 65535
         protocol    = "tcp"
-        cidr_blocks = [aws_vpc.Main.cidr_block]
+        cidr_blocks = [var.vpc-cidr_block]
     }
   ingress {
         from_port   = 8080
