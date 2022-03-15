@@ -32,7 +32,7 @@ resource "aws_security_group" "public-sg" {
         from_port   = 0
         to_port     = 65535
         protocol    = "tcp"
-        cidr_blocks = [var.vpc-cidr_block]
+        cidr_blocks = [var.vpc-cidr]
     }
   ingress {
         from_port   = 8080
@@ -50,7 +50,7 @@ resource "aws_security_group" "public-sg" {
 
 resource "aws_security_group" "private-sg" {
  name = "private-sg"
- vpc_id = aws_vpc.Main.id
+ vpc_id = var.vpc-id
   ingress {
     from_port        = 0
     to_port          = 0
