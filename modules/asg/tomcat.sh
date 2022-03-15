@@ -50,3 +50,8 @@ sudo touch tomcat.service
     sudo chmod 755 /etc/systemd/system/tomcat.service
 sudo systemctl daemon-reload
 sudo systemctl start tomcat
+
+##maven application
+git clone https://github.com/khoubyari/spring-boot-rest-example.git
+sudo apt install maven -y
+
