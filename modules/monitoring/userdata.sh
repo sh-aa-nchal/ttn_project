@@ -5,8 +5,9 @@ curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 sudo apt update
 sudo apt install elasticsearch
+sudo systemctl daemon-reload
+sudo systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch
-sudo systemctl enable elasticsearch
 sudo chown -R ubuntu:ubuntu elasticsearch
 echo "http.port =9200" >> /etc/elasticsearch/elasticsearch.yml
 sudo chown -R root:elasticsearch elasticsearch
