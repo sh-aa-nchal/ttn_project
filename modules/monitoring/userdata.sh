@@ -8,9 +8,9 @@ sudo apt install elasticsearch -y
 sudo systemctl daemon-reload
 sudo systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch
-sudo chown -R ubuntu:ubuntu elasticsearch
+sudo chown -R ubuntu:ubuntu /etc/elasticsearch
 echo "http.port =9200" >> /etc/elasticsearch/elasticsearch.yml
-sudo chown -R root:elasticsearch elasticsearch
+sudo chown -R root:elasticsearch /etc/elasticsearch
 
 #installing influxdb
 echo "deb https://repos.influxdata.com/ubuntu focal stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
