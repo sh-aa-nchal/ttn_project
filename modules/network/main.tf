@@ -74,3 +74,6 @@
    allocation_id = aws_eip.nateIP.id
    subnet_id = aws_subnet.publicsubnet1.id
  }
+
+
+ 
