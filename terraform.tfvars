@@ -12,3 +12,4 @@ db-ami =
 db-instance = 
 mon-ami = 
 mon-instance = 
+mon-privateip =
