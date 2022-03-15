@@ -37,7 +37,7 @@ module "database" {
 module "monitoring" {
   source = "./modules/monitoring"
   ami-mon = var.mon-ami
-  instance-mon = var.instance-mon
+  instance-mon = var.mon-instance
   subnet-mon = module.network.private_subnet_id
   sg-mon  = module.alb.private-sg-id
 }
