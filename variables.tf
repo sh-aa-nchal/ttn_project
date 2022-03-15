@@ -18,6 +18,7 @@ variable "min-healthy" {}
 ##database
 variable "db-ami" {}
 variable "db-instance" {}
+variable "db-privateip" {}
 
 ##monitoring
 variable "mon-ami" {}
