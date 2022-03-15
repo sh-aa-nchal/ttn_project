@@ -10,6 +10,7 @@ module "alb" {
   source  = "./modules/alb"
   subnet1 = module.network.public_subnet1.id
   subnet2 = module.publicsubnet2.id
+  
 }
   
 module "asg" {
