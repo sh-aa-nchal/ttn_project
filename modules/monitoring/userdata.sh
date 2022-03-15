@@ -9,7 +9,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch
 sudo chown -R ubuntu:ubuntu /etc/elasticsearch
-echo "http.port =9200" >> /etc/elasticsearch/elasticsearch.yml
+echo "http.port:9200" >> /etc/elasticsearch/elasticsearch.yml
 sudo chown -R root:elasticsearch /etc/elasticsearch
 
 #installing influxdb
