@@ -22,3 +22,4 @@ variable "db-instance" {}
 ##monitoring
 variable "mon-ami" {}
 variable "instance-mon" {}
+variable "mon-privateip" {}
