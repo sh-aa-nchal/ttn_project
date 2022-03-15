@@ -2,7 +2,7 @@ resource "aws_lb" "test" {
   name               = "test-lb-tf"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [var.sec_group_id]
+  security_groups    = [aws_security_group.public-sg.id]
   subnets            = [var.subnet1, var.subnet2]
 
   enable_deletion_protection = true
