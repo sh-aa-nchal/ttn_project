@@ -89,7 +89,7 @@ echo '  precision = ""' >> telegraf.conf
 echo '  hostname = ""' >> telegraf.conf
 echo '  omit_hostname = "false"' >> telegraf.conf
 echo "[[outputs.influxdb]]" >> telegraf.conf
-echo '  urls = ["http://  :8086"]' >> telegraf.conf
+echo '  urls = ["http:// 10.0.3.2:8086"]' >> telegraf.conf
 echo '  database = "telegraf"' >> telegraf.conf
 echo '  username = "telegraf"' >> telegraf.conf
 echo '  password = "influxpass"' >> telegraf.conf
